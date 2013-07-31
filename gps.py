@@ -21,7 +21,7 @@ def convertHMStoDecimal( hms):
 	else:
 		sign = 1
 	dec = (h + (m/60.0) + (s/3600.0) ) * sign#/1000000.0;
-	return dec
+	return round(dec, 6)
 
 def convertDecimaltoHMS(dec):
 	if dec < 0:
@@ -38,8 +38,9 @@ class Gps(object):
 	"""a simple gps class for holding lat and long and calculating distances and locations"""
 	def __init__(self, lat=0.0, lon=0.0):
 		super(Gps, self).__init__()
-		self.lat = lat
-		self.lon = lon
+		self.lat = round(lat, 6)
+		self.lon = round(lon, 6)
+
 
 	def distanceTo(self, otherGps):
 		'''result in meters'''
@@ -73,7 +74,7 @@ class Gps(object):
 				deltaLon = (2.0 * pi + dLong)
 
 		bearing = (degrees(atan2(deltaLon, dPhi)) + 360.0) % 360.0
-		return bearing
+		return round(bearing, 6)
 
 	def locationOf(self, bearing, distance):
 		'''bearing in degrees, distance in meters'''
