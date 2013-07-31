@@ -91,6 +91,9 @@ class Gps(object):
 		lon2 = lon1 + atan2( sin(bearing_r) * sin(distance_km/R) * cos(lat1), cos(distance_km/R) - (sin(lat1)*sin(lat2)) );
 		return Gps(lat=degrees(lat2), lon=degrees(lon2))
 
+	def __unicode__(self):
+		return self.__str__()
+
 	def __str__(self):
 		lathms = convertDecimaltoHMS(self.lat)
 		lonhms = convertDecimaltoHMS(self.lon)
