@@ -41,6 +41,11 @@ class Gps(object):
 		self.lat = round(lat, 6)
 		self.lon = round(lon, 6)
 
+	def get_lattitude(self):
+		return self.lat
+
+	def get_longtitude(self):
+		return self.lon
 
 	def distanceTo(self, otherGps):
 		'''result in meters'''
