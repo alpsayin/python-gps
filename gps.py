@@ -91,6 +91,10 @@ class Gps(object):
 		lon2 = lon1 + atan2( sin(bearing_r) * sin(distance_km/R) * cos(lat1), cos(distance_km/R) - (sin(lat1)*sin(lat2)) );
 		return Gps(lat=degrees(lat2), lon=degrees(lon2))
 
+	def isInBoundingCircle(self, otherGps, radius):
+		'''radius in meters'''
+		return self.distanceTo(otherGps) <= radius
+
 	def generateWaypointFile(self, altitude, commit=False):
 		template = '''QGC WPL 110
 0	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	0.000000	1
