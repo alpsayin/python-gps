@@ -160,3 +160,4 @@ if __name__ == '__main__':
 	bearing = balci.bearingTo(bodrum)
 	print 'distance: '+str(distance)
 	print 'bearing: '+str(bearing)
+	balci.generateWaypointFile(100, True)
