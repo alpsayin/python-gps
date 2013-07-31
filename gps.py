@@ -91,6 +91,20 @@ class Gps(object):
 		lon2 = lon1 + atan2( sin(bearing_r) * sin(distance_km/R) * cos(lat1), cos(distance_km/R) - (sin(lat1)*sin(lat2)) );
 		return Gps(lat=degrees(lat2), lon=degrees(lon2))
 
+	def generateWaypointFile(self, altitude, commit=False):
+		template = '''QGC WPL 110
+0	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	0.000000	1
+1	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	alt.000000	1
+2	1	3	17	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	1
+3	0	3	20	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	1'''
+		template = template.replace('lat', str(self.get_lattitude()))
+		template = template.replace('lon', str(self.get_longtitude()))
+		template = template.replace('alt', str(int(altitude)))
+		if commit:
+			wpfile = open('wp.txt', 'w')
+			wpfile.write(template)
+			wpfile.close()
+
 	def __unicode__(self):
 		return self.__str__()
 
