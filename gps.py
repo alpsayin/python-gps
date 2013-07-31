@@ -23,7 +23,7 @@ def convertHMStoDecimal( hms):
 	dec = (h + (m/60.0) + (s/3600.0) ) * sign#/1000000.0;
 	return round(dec, 6)
 
-def convertDecimaltoHMS(dec):
+def convertDecimaltoHMS( dec):
 	if dec < 0:
 		sign = -1
 	else:
