@@ -165,3 +165,4 @@ if __name__ == '__main__':
 	print 'distance: '+str(distance)
 	print 'bearing: '+str(bearing)
 	balci.generateWaypointFile(100, True)
+	
