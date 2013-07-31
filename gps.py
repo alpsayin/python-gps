@@ -128,3 +128,21 @@ if __name__ == '__main__':
 	print loc1fromDistance
 	print loc2 
 	print loc2fromDistance
+	
+	balciLatHms = (39, 53, 23.23)
+	balciLonHms = (32, 46, 30.70)
+	balciLatDec = convertHMStoDecimal(balciLatHms)
+	balciLonDec = convertHMStoDecimal(balciLonHms)
+	balci = Gps(balciLatDec, balciLonDec)
+	bodrumLatHms = (37, 01, 49.38)
+	bodrumLonHms = (27, 25, 01.41)
+	bodrumLatDec = convertHMStoDecimal(bodrumLatHms)
+	bodrumLonDec = convertHMStoDecimal(bodrumLonHms)
+	bodrum = Gps(bodrumLatDec, bodrumLonDec)
+	bodrum = Gps(bodrumLatDec, bodrumLonDec)
+	print 'balci : '+str(balci)
+	print 'bodrum : '+str(bodrum)
+	distance = balci.distanceTo(bodrum)/1000
+	bearing = balci.bearingTo(bodrum)
+	print 'distance: '+str(distance)
+	print 'bearing: '+str(bearing)
