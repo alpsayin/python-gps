@@ -5,7 +5,7 @@
 # sources:
 # http://www.movable-type.co.uk/scripts/latlong.html
 # http://gis.stackexchange.com/questions/29239/calculate-bearing-between-two-decimal-gps-coordinates
-
+# 31.07.2013
 
 import math
 from math import sin, cos, acos, tan, atan2, sqrt, radians, degrees, asin, floor, log, pi
