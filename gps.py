@@ -97,7 +97,7 @@ class Gps(object):
 	def __str__(self):
 		lathms = convertDecimaltoHMS(self.lat)
 		lonhms = convertDecimaltoHMS(self.lon)
-		return '('+str(self.lat)+', '+str(self.lon)+') : '+str(lathms)+', '+ str(lonhms)
+		return 'D('+str(self.lat)+', '+str(self.lon)+') : HMS'+str(lathms)+', '+ str(lonhms)
 
 if __name__ == '__main__':
 	coordHms1 = ( (39,52,4.35), (32,45,5.27))
