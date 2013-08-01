@@ -99,7 +99,7 @@ class Gps(object):
 		'''radius in meters'''
 		return self.distanceTo(otherGps) <= radius
 
-	def generateWaypointFile(self, altitude, commit=False):
+	def generateWaypointFile(self, altitude, commit=False, filename='wp.txt'):
 		template = '''QGC WPL 110
 0	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	0.000000	1
 1	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	alt.000000	1
@@ -109,7 +109,7 @@ class Gps(object):
 		template = template.replace('lon', str(self.get_longtitude()))
 		template = template.replace('alt', str(int(altitude)))
 		if commit:
-			wpfile = open('wp.txt', 'w')
+			wpfile = open( filename, 'w')
 			wpfile.write(template)
 			wpfile.close()
 
