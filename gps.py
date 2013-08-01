@@ -112,6 +112,7 @@ class Gps(object):
 			wpfile = open( filename, 'w')
 			wpfile.write(template)
 			wpfile.close()
+		return filename
 
 	def __unicode__(self):
 		return self.__str__()
