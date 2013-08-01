@@ -48,6 +48,9 @@ class Gps(object):
 	def get_longtitude(self):
 		return self.lon
 
+	def get_altitude(self):
+		return self.alt
+
 	def distanceTo(self, otherGps):
 		'''result in meters'''
 		deltaLatRad = radians(self.lat-otherGps.lat)
