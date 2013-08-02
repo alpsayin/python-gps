@@ -102,12 +102,12 @@ class Gps(object):
 	def generateWaypointFile(self, altitude, commit=False, filename='wp.txt'):
 		template = '''QGC WPL 110
 0	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	0.000000	1
-1	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	alt.000000	1
+1	0	3	16	0.000000	0.000000	0.000000	0.000000	lat	lon	alt	1
 2	1	3	17	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	1
 3	0	3	20	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	0.000000	1'''
 		template = template.replace('lat', str(self.get_lattitude()))
 		template = template.replace('lon', str(self.get_longtitude()))
-		template = template.replace('alt', str(int(altitude)))
+		template = template.replace('alt', str(float(altitude)))
 		if commit:
 			wpfile = open( filename, 'w')
 			wpfile.write(template)
