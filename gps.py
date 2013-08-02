@@ -38,9 +38,9 @@ class Gps(object):
 	"""a simple gps class for holding lat and long and calculating distances and locations"""
 	def __init__(self, lat=0.0, lon=0.0, alt=0.0):
 		super(Gps, self).__init__()
-		self.lat = round(lat, 6)
-		self.lon = round(lon, 6)
-		self.alt = round(alt, 6)
+		self.lat = round(float(lat), 6)
+		self.lon = round(float(lon), 6)
+		self.alt = round(float(alt), 6)
 
 	def get_lattitude(self):
 		return self.lat
