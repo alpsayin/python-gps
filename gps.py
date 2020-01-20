@@ -76,9 +76,9 @@ class Gps(object):
         dPhi = log(tan(lat2/2.0+pi/4.0)/tan(lat1/2.0+pi/4.0))
         if abs(deltaLon) > pi:
             if deltaLon > 0.0:
-                deltaLon = -(2.0 * pi - dLong)
+                deltaLon = -(2.0 * pi - deltaLon)
             else:
-                deltaLon = (2.0 * pi + dLong)
+                deltaLon = (2.0 * pi + deltaLon)
 
         bearing = (degrees(atan2(deltaLon, dPhi)) + 360.0) % 360.0
         return round(bearing, 6)
